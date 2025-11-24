@@ -98,7 +98,6 @@
 
     <script src="script.js"></script>
     <script>
-        // 1. DATA STRUCTURE: Store the event details here
         const eventDetails = {
             'techfest_open': {
                 src: './assets/images/Techfestopening.jpg',
@@ -132,7 +131,6 @@
             }
         };
 
-        // 2. JS FUNCTION: Updated to pull data from the structure
         function openLightbox(eventId) {
             const data = eventDetails[eventId];
 
@@ -141,7 +139,6 @@
                 document.getElementById('lightbox-image').src = data.src;
                 document.getElementById('lightbox-caption').innerText = data.title;
                 
-                // NEW: Set the description text
                 document.getElementById('lightbox-description').innerText = data.description; 
             }
         }
