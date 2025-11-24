@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescent University - Upcoming Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./assets/images/crescent.jpg" alt="Crescent University Logo" class="nav-logo">
+                    Crescent University Events
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="register.html">Register Now</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>🗓️ All Upcoming Events</h1>
+        <p><i>Don't miss out on these fantastic opportunities!</i></p>
+        
+        <div class="grid-layout" id="events-list">
+            
+            <div class="card event-card">
+                <h3>CoderBuzz</h3>
+                <p><i class="fas fa-calendar-day"></i> <strong>Date:</strong> December 02, 2025</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Robotics Lab</p>
+                <div id="countdown-CoderBuzz" class="countdown"></div>
+                <a href="event-details.html?event=CoderBuzz" class="btn btn-primary">View Details</a>
+            </div>
+
+            <div class="card event-card">
+                <h3>Dangenix</h3>
+                <p><i class="fas fa-calendar-day"></i> <strong>Date:</strong> January 10, 2026</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Dance Hall</p>
+                <div id="countdown-Dangenix" class="countdown"></div>
+                <a href="event-details.html?event=Dangenix" class="btn btn-primary">View Details</a>
+            </div>
+
+            <div class="card event-card">
+                <h3>Techathon'26</h3>
+                <p><i class="fas fa-calendar-day"></i> <strong>Date:</strong> February 05, 2026</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Main Auditorium</p>
+                <div id="countdown-Techathon" class="countdown"></div>
+                <a href="event-details.html?event=Techathon" class="btn btn-primary">View Details</a>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Crescent University Events Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Script calls to start the countdowns for each event
+            startCountdown(new Date("December 02, 2025 14:00:00").getTime(), 'countdown-CoderBuzz');
+            startCountdown(new Date("January 10, 2026 09:00:00").getTime(), 'countdown-Dangenix');
+            startCountdown(new Date("February 05, 2026 10:00:00").getTime(), 'countdown-Techathon');
+        });
+    </script>
+</body>
+</html>

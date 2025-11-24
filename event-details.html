@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescent University - Event Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./assets/images/crescent.jpg" alt="Crescent University Logo" class="nav-logo">
+                    Crescent University Events
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html" class="active">Events</a></li> 
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="register.html">Register Now</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Techathon'26</h1> <p class="text-secondary"><strong>Main Auditorium | February 05, 2026</strong></p>
+        
+        <img src="./assets/images/Techathon.jpeg" alt="Event Image: Techathon" class="event-image">
+        
+        <div class="grid-layout" style="grid-template-columns: 2fr 1fr; gap: 40px;">
+            
+            <div class="details-section">
+                <h3>Full Description</h3>
+                <p>Techathon'26 is the annual flagship coding contest designed to test speed, efficiency, and algorithmic problem-solving skills. Participants will face a series of escalating challenges under a tight time constraint. The top 3 winners will receive cash prizes, certificates of excellence, and fast-track interview opportunities.</p>
+
+                <h3>Rules & Guidelines</h3>
+                <ul>
+                    <li>Participants must use their own laptop.</li>
+                    <li>Only C++, Python, and Java languages are permitted.</li>
+                    <li>External communication and use of pre-written code snippets are strictly prohibited.</li>
+                    <li>Registration closes 48 hours before the event start time.</li>
+                </ul>
+            </div>
+            
+            <div class="details-section" style="padding-top: 0;">
+                <h2>Event Countdown</h2>
+                <div id="details-countdown" class="countdown" style="font-size: 1.8em; margin-bottom: 25px;"></div>
+                
+                <a id="register-btn" href="register.html" class="btn btn-primary btn-large" style="width: 100%;">
+                    <i class="fas fa-edit"></i> Register Now
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Crescent University Events Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. DYNAMICALLY UPDATE REGISTRATION LINK
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventCode = urlParams.get('event');
+            
+            const registerButton = document.getElementById('register-btn');
+
+            if (eventCode && registerButton) {
+                // Set the link to include the event parameter
+                registerButton.href = `register.html?event=${eventCode}`;
+            }
+
+            // 2. START COUNTDOWN (using Techathon's date as a placeholder for details page)
+            startCountdown(new Date("February 05, 2026 10:00:00").getTime(), 'details-countdown');
+        });
+    </script>
+</body>
+</html>

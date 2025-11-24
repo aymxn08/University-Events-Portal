@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescent University - Event Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./assets/images/crescent.jpg" alt="Crescent University Logo" class="nav-logo">
+                    Crescent University Events
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="register.html">Register Now</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>📸 Photo Gallery: Relive the Moments</h1>
+        <p><i>A collection of the best photos from our past successful events at Crescent University.</i></p>
+        
+        <div class="gallery-grid" id="photo-gallery">
+            
+            <div class="gallery-item" onclick="openLightbox('techfest_open')">
+                <img src="./assets/images/Techfestopening.jpg" alt="TechFest Opening Ceremony">
+                <div class="gallery-caption">
+                    <h3>TechFest Opening Ceremony</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" onclick="openLightbox('robotics_winner')">
+                <img src="./assets/images/Roboticschallenge.jpeg" alt="Robotics Challenge Winner">
+                <div class="gallery-caption">
+                    <h3>Robotics Challenge Winner</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" onclick="openLightbox('ai_seminar')">
+                <img src="./assets/images/Aiseminar.jpg" alt="AI Seminar Attendees">
+                <div class="gallery-caption">
+                    <h3>AI Seminar Attendees</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" onclick="openLightbox('hackaroot_2k25')">
+                <img src="./assets/images/Hackaroot'2K25.JPG" alt="Hackaroot 2k25">
+                <div class="gallery-caption">
+                    <h3>Hackaroot 2K25</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('qirath_comp')">
+                <img src="./assets/images/Qirath Competition.jpeg" alt="Qirath Competition">
+                <div class="gallery-caption">
+                    <h3>Qirath Competition</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" onclick="openLightbox('offcampus_hack')">
+                <img src="./assets/images/Offcampus.jpg" alt="OffCampus Hackathon">
+                <div class="gallery-caption">
+                    <h3>Off Campus Hackathon</h3>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="lightbox-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center; flex-direction:column;">
+        <span onclick="closeLightbox()" style="position:absolute; top:20px; right:35px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
+        
+        <div style="display:flex; max-width:90%; max-height:90%; align-items:flex-start; background:rgba(255, 255, 255, 0.1);">
+            <img id="lightbox-image" style="max-width:70%; max-height:90vh; object-fit:contain; margin-right: 20px;">
+            
+            <div id="lightbox-details" style="max-width:30%; padding:20px; color:white; background:rgba(0,0,0,0.5); border-radius: 5px;">
+                <h2 id="lightbox-caption" style="margin-top:0; color:white;"></h2>
+                <hr style="border-color: rgba(255, 255, 255, 0.3);">
+                <p id="lightbox-description" style="font-size:1em; line-height:1.5;"></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Crescent University Events Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 1. DATA STRUCTURE: Store the event details here
+        const eventDetails = {
+            'techfest_open': {
+                src: './assets/images/Techfestopening.jpg',
+                title: 'TechFest Opening Ceremony',
+                description: 'The spectacular opening ceremony of the annual TechFest, featuring a keynote speech from the Dean, lighting the traditional lamp, and introducing the major competition tracks. This photo captures the excitement of the initial crowd and the organizing committee.',
+            },
+            'robotics_winner': {
+                src: './assets/images/Roboticschallenge.jpeg',
+                title: 'Robotics Challenge Winner',
+                description: 'A proud moment from the Robotics Challenge! This image features the winning team showcasing their champion autonomous robot. The challenge tested students\' skills in design, programming, and real-time problem-solving.',
+            },
+            'ai_seminar': {
+                src: './assets/images/Aiseminar.jpg',
+                title: 'AI Seminar Attendees',
+                description: 'A snapshot from the high-demand AI and Machine Learning seminar, which covered cutting-edge topics like deep neural networks and ethical AI. The session featured a guest speaker from a leading tech company.',
+            },
+            'hackaroot_2k25': {
+                src: './assets/images/Hackaroot\'2K25.JPG',
+                title: 'Hackaroot 2K25',
+                description: 'A candid photo from the successful 24-hour Hackaroot coding competition. Teams are seen intensely collaborating and brainstorming solutions to real-world software problems. Creativity and endurance were key!',
+            },
+            'qirath_comp': {
+                src: './assets/images/Qirath Competition.jpeg',
+                title: 'Qirath Competition',
+                description: 'An image from the annual Qirath competition, celebrating the art of Quranic recitation. The event emphasizes precision, melody, and rhythm, fostering cultural and religious awareness within the university community.',
+            },
+            'offcampus_hack': {
+                src: './assets/images/Offcampus.jpg',
+                title: 'Off Campus Hackathon',
+                description: 'The winning team from the Off Campus Hackathon, hosted in partnership with local tech startups. This competition focused on entrepreneurial skills and developing mobile applications for public good.',
+            }
+        };
+
+        // 2. JS FUNCTION: Updated to pull data from the structure
+        function openLightbox(eventId) {
+            const data = eventDetails[eventId];
+
+            if (data) {
+                document.getElementById('lightbox-modal').style.display = 'flex';
+                document.getElementById('lightbox-image').src = data.src;
+                document.getElementById('lightbox-caption').innerText = data.title;
+                
+                // NEW: Set the description text
+                document.getElementById('lightbox-description').innerText = data.description; 
+            }
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

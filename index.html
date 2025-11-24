@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescent University Events Portal - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./assets/images/crescent.jpg" alt="Crescent University Logo" class="nav-logo">
+                    Crescent University Events
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="register.html">Register Now</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero-banner"> 
+            
+            <video autoplay muted loop playsinline id="hero-video">
+                <source src="https://crescent.education/wp-content/uploads/2025/05/BSACIST-3-26052025.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="container banner-content"> 
+                <h1>Ignite Your Campus Life at Crescent University</h1>
+                <p>Explore, Participate, and Excel in the upcoming events.</p>
+                <a href="events.html" class="btn btn-primary btn-large">View All Events <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+        <section id="featured-event" class="container">
+            <h2>Featured Event: Techathon'26</h2>
+            
+            <div class="card featured-card">
+                <h3>Techathon'26</h3>
+                <p><strong>Location: Main Auditorium | Date: February 05, 2026</strong></p>
+                
+                <div id="featured-countdown" class="countdown">
+                    Loading countdown...
+                </div>
+
+                <p class="description">
+                    Join the biggest coding competition of the year! Solve complex challenges, win cash prizes, and secure internship opportunities.
+                </p>
+                <a href="event-details.html?event=Techathon" class="btn btn-primary">View Details</a>
+            </div>
+        </section>
+
+        <section id="quick-links" class="container">
+            <h2>Quick Access</h2>
+            <div class="grid-layout">
+                <a href="events.html" class="quick-link-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Events List</h3>
+                    <p>See all upcoming competitions and seminars.</p>
+                </a>
+                <a href="register.html" class="quick-link-card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Registration</h3>
+                    <p>Secure your spot for any event instantly.</p>
+                </a>
+                <a href="gallery.html" class="quick-link-card">
+                    <i class="fas fa-images"></i>
+                    <h3>Event Gallery</h3>
+                    <p>Relive the best moments from previous years.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Crescent University Events Portal. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initiate countdown for the featured event (Techathon'26)
+            startCountdown(new Date("February 05, 2026 10:00:00").getTime(), 'featured-countdown');
+        });
+    </script>
+</body>
+</html>
