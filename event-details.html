@@ -67,18 +67,15 @@
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. DYNAMICALLY UPDATE REGISTRATION LINK
             const urlParams = new URLSearchParams(window.location.search);
             const eventCode = urlParams.get('event');
             
             const registerButton = document.getElementById('register-btn');
 
             if (eventCode && registerButton) {
-                // Set the link to include the event parameter
                 registerButton.href = `register.html?event=${eventCode}`;
             }
 
-            // 2. START COUNTDOWN (using Techathon's date as a placeholder for details page)
             startCountdown(new Date("February 05, 2026 10:00:00").getTime(), 'details-countdown');
         });
     </script>

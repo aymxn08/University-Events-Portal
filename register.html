@@ -78,7 +78,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const eventCode = urlParams.get('event');
             if (eventCode) {
-                // This logic auto-selects the event if the 'event' parameter is in the URL.
+
                 document.getElementById('select-event').value = eventCode;
             }
         });
